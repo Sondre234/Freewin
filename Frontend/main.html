@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<link rel="StyleSheet" href="main.css">
+<html
+<head>
+    <title>League</title>
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+    integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="mainDiv">
+    <input placeholder="Summoner Name">
+    <button hx-post="/search" hx-trigger="click">Search</button>
+</div>
+
+</body>
+</html>
