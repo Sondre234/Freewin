@@ -23,7 +23,8 @@ type Comment struct {
 	Date    time.Time `bson:"date"`
 }
 
-func lol() {
+func connect() {
+
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 
 	clientOptions := options.Client().ApplyURI("mongodb+srv://sondre:passord@easywin.ihpovx4.mongodb.net/?retryWrites=true&w=majority&appName=Easywin").SetServerAPIOptions(serverAPI)

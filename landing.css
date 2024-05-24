@@ -1,0 +1,160 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+    color: #333;
+    text-shadow: none; /* Prevent inheritance from `body` */
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+    height: 100%;
+    background-color: #121212; /* Dark background */
+    margin: 0;
+}
+body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    font-size: 1.5em; /* Increase base font size */
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* Ensure full height coverage */
+    background-color: #333;
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: middle; /* Center vertically */
+}
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+    padding: 30px;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em; /* Increase brand size */
+    display: inline-block;
+}
+
+.masthead-nav {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.masthead-nav > li {
+    display: inline-block;
+}
+.masthead-nav > li + li {
+    margin-left: 30px; /* Increase spacing between nav items */
+}
+.masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1.5em; /* Increase nav item font size */
+    font-weight: bold;
+    color: #fff; /* IE8 proofing */
+    color: rgba(255,255,255,.75);
+    border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .masthead-brand {
+        float: none;
+    }
+    .masthead-nav {
+        float: none;
+    }
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+    padding: 0 20px;
+}
+.cover .btn-lg {
+    padding: 15px 30px; /* Increase button padding */
+    font-size: 1.5em; /* Increase button font size */
+    font-weight: bold;
+}
+
+/*
+ * Input field styling
+ */
+input[type="text"] {
+    padding: 15px; /* Increase padding */
+    font-size: 1.5em; /* Increase font size */
+    color: #fff;
+    background-color: #555; /* Dark background for input */
+    border: 1px solid #777; /* Darker border */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px; /* Increase max width */
+    margin: 20px 0; /* Increase margin */
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    font-size: 1.2em; /* Increase placeholder font size */
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
+}
