@@ -2,14 +2,16 @@ package main
 
 import (
 	"context"
-	"html/template"
-	"log"
-	"net/http"
-	"time"
-
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
+	"net/http"
+	"time"
+)
+
+import (
+	"html/template"
 )
 
 type Comment struct {
@@ -21,7 +23,7 @@ type Comment struct {
 	Date    time.Time `bson:"date"`
 }
 
-func main() {
+func lol() {
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 
 	clientOptions := options.Client().ApplyURI("mongodb+srv://sondre:passord@easywin.ihpovx4.mongodb.net/?retryWrites=true&w=majority&appName=Easywin").SetServerAPIOptions(serverAPI)
