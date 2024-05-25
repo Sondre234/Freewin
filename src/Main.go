@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strings"
 )
 
 type Config struct {
@@ -48,17 +49,19 @@ func searchHandler(config *Config) http.HandlerFunc {
 			return
 		}
 
-		summonerName := r.FormValue("summonerName")
-		tagLine := r.FormValue("tagLine")
-
-		if summonerName == "" || tagLine == "" {
-			http.Error(w, "Missing summonerName or tagLine", http.StatusBadRequest)
+		summonerInfo := r.FormValue("summonerInfo")
+		parts := strings.Split(summonerInfo, "#")
+		if len(parts) != 2 {
+			http.Error(w, "Invalid format. Use summonerName#tagLine", http.StatusBadRequest)
 			return
 		}
+		summonerName := parts[0]
+		tagLine := parts[1]
 
 		encodedSummonerName := url.QueryEscape(summonerName)
 		encodedTagLine := url.QueryEscape(tagLine)
-		apiURL := fmt.Sprintf("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/%s/%s?api_key=%s", encodedSummonerName, encodedTagLine, config.APIKey)
+		apiURL := fmt.Sprintf("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/%s/%s?api_key=%s",
+			encodedSummonerName, encodedTagLine, config.APIKey)
 
 		resp, err := http.Get(apiURL)
 		if err != nil {
@@ -81,10 +84,10 @@ func searchHandler(config *Config) http.HandlerFunc {
 		}
 
 		tmpl := template.Must(template.New("summoner-info").Parse(`
-			<p class="card-text"><strong>Puuid:</strong> {{.Puuid}}</p>
-			<p class="card-text"><strong>Game Name:</strong> {{.GameName}}</p>
-			<p class="card-text"><strong>Tag Line:</strong> {{.TagLine}}</p>
-		`))
+            <p class="card-text"><strong>Puuid:</strong> {{.Puuid}}</p>
+            <p class="card-text"><strong>Game Name:</strong> {{.GameName}}</p>
+            <p class="card-text"><strong>Tag Line:</strong> {{.TagLine}}</p>
+        `))
 		if err := tmpl.Execute(w, summoner); err != nil {
 			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
 		}
@@ -92,15 +95,19 @@ func searchHandler(config *Config) http.HandlerFunc {
 }
 
 func main() {
-	config, err := readConfig("config.json")
+	config, err := readConfig("resources/config.json")
 	if err != nil {
 		log.Fatalf("Error reading config file: %v", err)
 	}
 
+	// Serve static files from the "static" directory
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	http.HandleFunc("/search", searchHandler(config))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("index.html"))
+		tmpl := template.Must(template.ParseFiles("C:\\Users\\sondr\\Stuff1\\htmx\\index.html"))
 		if err := tmpl.Execute(w, nil); err != nil {
 			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
 		}
