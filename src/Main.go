@@ -107,7 +107,7 @@ func main() {
 	http.HandleFunc("/search", searchHandler(config))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("C:\\Users\\sondr\\Stuff1\\htmx\\index.html"))
+		tmpl := template.Must(template.ParseFiles("htmx/index.html"))
 		if err := tmpl.Execute(w, nil); err != nil {
 			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
 		}
