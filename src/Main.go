@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -11,6 +12,16 @@ import (
 	"os"
 	"strings"
 )
+
+type Stats struct {
+	Stats []Champion `json:"stats"`
+}
+
+type Champion struct {
+	Champion string `json:"champion"`
+	Role     string `json:"role"`
+	Winrate  string `json:"winrate"`
+}
 
 type Config struct {
 	APIKey string `json:"apiKey"`
@@ -94,7 +105,71 @@ func searchHandler(config *Config) http.HandlerFunc {
 	}
 }
 
-func main() {
+func updateWinrateDataFromTextFileToJsonFormat() {
+
+	winratestxtpath := "C:\\Users\\sondr\\Stuff1\\resources\\winrates.txt"
+	bestChampsjsonPath := "C:\\Users\\sondr\\Stuff1\\resources\\bestChamps.json"
+
+	file, err := os.Open(winratestxtpath)
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	var champions []Champion
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		parts := strings.Split(line, ": ")
+		if len(parts) != 2 {
+			fmt.Println("Invalid line format:", line)
+			continue
+		}
+
+		roleChamp := parts[0]
+		winrate := strings.TrimSuffix(parts[1], "%")
+
+		roleChampParts := strings.SplitN(roleChamp, " ", 2)
+		if len(roleChampParts) != 2 {
+			fmt.Println("Invalid role and champion format:", roleChamp)
+			continue
+		}
+
+		role := strings.ToLower(roleChampParts[0])
+		champion := strings.ToLower(roleChampParts[1])
+
+		champions = append(champions, Champion{
+			Champion: champion,
+			Role:     role,
+			Winrate:  winrate,
+		})
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+
+	stats := Stats{Stats: champions}
+	jsonData, err := json.MarshalIndent(stats, "", "  ")
+	if err != nil {
+		fmt.Println("Error marshaling JSON:", err)
+		return
+	}
+
+	err = os.WriteFile(bestChampsjsonPath, jsonData, 0644)
+	if err != nil {
+		fmt.Println("Error writing JSON to file:", err)
+		return
+	}
+
+	fmt.Println("JSON data successfully written to resources/bestChamps.json")
+}
+
+func sss() {
+
 	config, err := readConfig("resources/config.json")
 	if err != nil {
 		log.Fatalf("Error reading config file: %v", err)

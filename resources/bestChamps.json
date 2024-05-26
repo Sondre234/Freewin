@@ -1,0 +1,1169 @@
+{
+  "stats": [
+    {
+      "champion": "tryndamere",
+      "role": "mid",
+      "winrate": "55.67"
+    },
+    {
+      "champion": "karthus",
+      "role": "adc",
+      "winrate": "54.12"
+    },
+    {
+      "champion": "taric",
+      "role": "support",
+      "winrate": "53.24"
+    },
+    {
+      "champion": "seraphine",
+      "role": "adc",
+      "winrate": "53.12"
+    },
+    {
+      "champion": "akshan",
+      "role": "mid",
+      "winrate": "53.09"
+    },
+    {
+      "champion": "cassiopeia",
+      "role": "mid",
+      "winrate": "52.86"
+    },
+    {
+      "champion": "rek'sai",
+      "role": "jungle",
+      "winrate": "52.82"
+    },
+    {
+      "champion": "poppy",
+      "role": "support",
+      "winrate": "52.79"
+    },
+    {
+      "champion": "camille",
+      "role": "top",
+      "winrate": "52.61"
+    },
+    {
+      "champion": "akshan",
+      "role": "top",
+      "winrate": "52.60"
+    },
+    {
+      "champion": "brand",
+      "role": "adc",
+      "winrate": "52.55"
+    },
+    {
+      "champion": "kled",
+      "role": "top",
+      "winrate": "52.39"
+    },
+    {
+      "champion": "poppy",
+      "role": "top",
+      "winrate": "52.38"
+    },
+    {
+      "champion": "cassiopeia",
+      "role": "top",
+      "winrate": "52.31"
+    },
+    {
+      "champion": "rumble",
+      "role": "mid",
+      "winrate": "52.30"
+    },
+    {
+      "champion": "tryndamere",
+      "role": "top",
+      "winrate": "52.29"
+    },
+    {
+      "champion": "vex",
+      "role": "mid",
+      "winrate": "52.28"
+    },
+    {
+      "champion": "jinx",
+      "role": "adc",
+      "winrate": "52.27"
+    },
+    {
+      "champion": "taliyah",
+      "role": "jungle",
+      "winrate": "52.05"
+    },
+    {
+      "champion": "rell",
+      "role": "support",
+      "winrate": "52.02"
+    },
+    {
+      "champion": "warwick",
+      "role": "top",
+      "winrate": "52.02"
+    },
+    {
+      "champion": "gwen",
+      "role": "top",
+      "winrate": "52.01"
+    },
+    {
+      "champion": "braum",
+      "role": "support",
+      "winrate": "51.99"
+    },
+    {
+      "champion": "skarner",
+      "role": "support",
+      "winrate": "51.97"
+    },
+    {
+      "champion": "blitzcrank",
+      "role": "support",
+      "winrate": "51.93"
+    },
+    {
+      "champion": "kennen",
+      "role": "top",
+      "winrate": "51.93"
+    },
+    {
+      "champion": "ashe",
+      "role": "adc",
+      "winrate": "51.91"
+    },
+    {
+      "champion": "vel'koz",
+      "role": "mid",
+      "winrate": "51.87"
+    },
+    {
+      "champion": "xerath",
+      "role": "mid",
+      "winrate": "51.86"
+    },
+    {
+      "champion": "leona",
+      "role": "support",
+      "winrate": "51.85"
+    },
+    {
+      "champion": "tahm kench",
+      "role": "support",
+      "winrate": "51.84"
+    },
+    {
+      "champion": "neeko",
+      "role": "mid",
+      "winrate": "51.80"
+    },
+    {
+      "champion": "skarner",
+      "role": "top",
+      "winrate": "51.79"
+    },
+    {
+      "champion": "fiddlesticks",
+      "role": "jungle",
+      "winrate": "51.77"
+    },
+    {
+      "champion": "twisted fate",
+      "role": "mid",
+      "winrate": "51.75"
+    },
+    {
+      "champion": "pantheon",
+      "role": "mid",
+      "winrate": "51.69"
+    },
+    {
+      "champion": "skarner",
+      "role": "jungle",
+      "winrate": "51.68"
+    },
+    {
+      "champion": "swain",
+      "role": "mid",
+      "winrate": "51.66"
+    },
+    {
+      "champion": "rumble",
+      "role": "jungle",
+      "winrate": "51.66"
+    },
+    {
+      "champion": "zoe",
+      "role": "mid",
+      "winrate": "51.64"
+    },
+    {
+      "champion": "rammus",
+      "role": "jungle",
+      "winrate": "51.64"
+    },
+    {
+      "champion": "kog'maw",
+      "role": "adc",
+      "winrate": "51.63"
+    },
+    {
+      "champion": "ziggs",
+      "role": "adc",
+      "winrate": "51.62"
+    },
+    {
+      "champion": "lux",
+      "role": "mid",
+      "winrate": "51.60"
+    },
+    {
+      "champion": "ivern",
+      "role": "jungle",
+      "winrate": "51.59"
+    },
+    {
+      "champion": "kayle",
+      "role": "mid",
+      "winrate": "51.58"
+    },
+    {
+      "champion": "zac",
+      "role": "top",
+      "winrate": "51.57"
+    },
+    {
+      "champion": "gragas",
+      "role": "top",
+      "winrate": "51.57"
+    },
+    {
+      "champion": "quinn",
+      "role": "top",
+      "winrate": "51.55"
+    },
+    {
+      "champion": "jhin",
+      "role": "adc",
+      "winrate": "51.53"
+    },
+    {
+      "champion": "karthus",
+      "role": "jungle",
+      "winrate": "51.50"
+    },
+    {
+      "champion": "xin zhao",
+      "role": "jungle",
+      "winrate": "51.50"
+    },
+    {
+      "champion": "sona",
+      "role": "support",
+      "winrate": "51.50"
+    },
+    {
+      "champion": "annie",
+      "role": "mid",
+      "winrate": "51.44"
+    },
+    {
+      "champion": "gwen",
+      "role": "jungle",
+      "winrate": "51.43"
+    },
+    {
+      "champion": "anivia",
+      "role": "mid",
+      "winrate": "51.43"
+    },
+    {
+      "champion": "twisted fate",
+      "role": "top",
+      "winrate": "51.40"
+    },
+    {
+      "champion": "riven",
+      "role": "top",
+      "winrate": "51.39"
+    },
+    {
+      "champion": "ekko",
+      "role": "mid",
+      "winrate": "51.32"
+    },
+    {
+      "champion": "gragas",
+      "role": "mid",
+      "winrate": "51.31"
+    },
+    {
+      "champion": "udyr",
+      "role": "jungle",
+      "winrate": "51.31"
+    },
+    {
+      "champion": "galio",
+      "role": "mid",
+      "winrate": "51.29"
+    },
+    {
+      "champion": "morgana",
+      "role": "jungle",
+      "winrate": "51.28"
+    },
+    {
+      "champion": "kindred",
+      "role": "jungle",
+      "winrate": "51.24"
+    },
+    {
+      "champion": "irelia",
+      "role": "mid",
+      "winrate": "51.24"
+    },
+    {
+      "champion": "tahm kench",
+      "role": "top",
+      "winrate": "51.23"
+    },
+    {
+      "champion": "rengar",
+      "role": "top",
+      "winrate": "51.20"
+    },
+    {
+      "champion": "pyke",
+      "role": "support",
+      "winrate": "51.20"
+    },
+    {
+      "champion": "yorick",
+      "role": "top",
+      "winrate": "51.20"
+    },
+    {
+      "champion": "taliyah",
+      "role": "mid",
+      "winrate": "51.18"
+    },
+    {
+      "champion": "nunu \u0026 willump",
+      "role": "jungle",
+      "winrate": "51.16"
+    },
+    {
+      "champion": "diana",
+      "role": "mid",
+      "winrate": "51.14"
+    },
+    {
+      "champion": "volibear",
+      "role": "jungle",
+      "winrate": "51.11"
+    },
+    {
+      "champion": "shen",
+      "role": "top",
+      "winrate": "51.10"
+    },
+    {
+      "champion": "nocturne",
+      "role": "jungle",
+      "winrate": "51.06"
+    },
+    {
+      "champion": "irelia",
+      "role": "top",
+      "winrate": "51.06"
+    },
+    {
+      "champion": "kayle",
+      "role": "top",
+      "winrate": "51.05"
+    },
+    {
+      "champion": "fiora",
+      "role": "top",
+      "winrate": "51.05"
+    },
+    {
+      "champion": "sett",
+      "role": "top",
+      "winrate": "51.05"
+    },
+    {
+      "champion": "nidalee",
+      "role": "jungle",
+      "winrate": "50.99"
+    },
+    {
+      "champion": "sylas",
+      "role": "top",
+      "winrate": "50.96"
+    },
+    {
+      "champion": "rakan",
+      "role": "support",
+      "winrate": "50.92"
+    },
+    {
+      "champion": "shaco",
+      "role": "jungle",
+      "winrate": "50.91"
+    },
+    {
+      "champion": "jarvan iv",
+      "role": "jungle",
+      "winrate": "50.89"
+    },
+    {
+      "champion": "talon",
+      "role": "mid",
+      "winrate": "50.88"
+    },
+    {
+      "champion": "qiyana",
+      "role": "mid",
+      "winrate": "50.87"
+    },
+    {
+      "champion": "warwick",
+      "role": "jungle",
+      "winrate": "50.86"
+    },
+    {
+      "champion": "viktor",
+      "role": "mid",
+      "winrate": "50.84"
+    },
+    {
+      "champion": "janna",
+      "role": "support",
+      "winrate": "50.81"
+    },
+    {
+      "champion": "brand",
+      "role": "mid",
+      "winrate": "50.80"
+    },
+    {
+      "champion": "lillia",
+      "role": "jungle",
+      "winrate": "50.80"
+    },
+    {
+      "champion": "elise",
+      "role": "jungle",
+      "winrate": "50.79"
+    },
+    {
+      "champion": "bel'veth",
+      "role": "jungle",
+      "winrate": "50.78"
+    },
+    {
+      "champion": "mordekaiser",
+      "role": "top",
+      "winrate": "50.77"
+    },
+    {
+      "champion": "wukong",
+      "role": "top",
+      "winrate": "50.75"
+    },
+    {
+      "champion": "caitlyn",
+      "role": "adc",
+      "winrate": "50.75"
+    },
+    {
+      "champion": "zac",
+      "role": "support",
+      "winrate": "50.72"
+    },
+    {
+      "champion": "alistar",
+      "role": "support",
+      "winrate": "50.72"
+    },
+    {
+      "champion": "soraka",
+      "role": "support",
+      "winrate": "50.72"
+    },
+    {
+      "champion": "amumu",
+      "role": "jungle",
+      "winrate": "50.70"
+    },
+    {
+      "champion": "olaf",
+      "role": "top",
+      "winrate": "50.67"
+    },
+    {
+      "champion": "thresh",
+      "role": "support",
+      "winrate": "50.66"
+    },
+    {
+      "champion": "nilah",
+      "role": "adc",
+      "winrate": "50.62"
+    },
+    {
+      "champion": "urgot",
+      "role": "top",
+      "winrate": "50.62"
+    },
+    {
+      "champion": "malphite",
+      "role": "top",
+      "winrate": "50.61"
+    },
+    {
+      "champion": "syndra",
+      "role": "mid",
+      "winrate": "50.59"
+    },
+    {
+      "champion": "twitch",
+      "role": "adc",
+      "winrate": "50.57"
+    },
+    {
+      "champion": "jax",
+      "role": "jungle",
+      "winrate": "50.57"
+    },
+    {
+      "champion": "ekko",
+      "role": "jungle",
+      "winrate": "50.56"
+    },
+    {
+      "champion": "samira",
+      "role": "adc",
+      "winrate": "50.53"
+    },
+    {
+      "champion": "gragas",
+      "role": "jungle",
+      "winrate": "50.52"
+    },
+    {
+      "champion": "talon",
+      "role": "jungle",
+      "winrate": "50.47"
+    },
+    {
+      "champion": "maokai",
+      "role": "support",
+      "winrate": "50.46"
+    },
+    {
+      "champion": "sylas",
+      "role": "mid",
+      "winrate": "50.45"
+    },
+    {
+      "champion": "tristana",
+      "role": "adc",
+      "winrate": "50.41"
+    },
+    {
+      "champion": "rumble",
+      "role": "top",
+      "winrate": "50.40"
+    },
+    {
+      "champion": "akali",
+      "role": "mid",
+      "winrate": "50.40"
+    },
+    {
+      "champion": "zilean",
+      "role": "support",
+      "winrate": "50.36"
+    },
+    {
+      "champion": "miss fortune",
+      "role": "adc",
+      "winrate": "50.34"
+    },
+    {
+      "champion": "zac",
+      "role": "jungle",
+      "winrate": "50.32"
+    },
+    {
+      "champion": "neeko",
+      "role": "support",
+      "winrate": "50.27"
+    },
+    {
+      "champion": "hwei",
+      "role": "mid",
+      "winrate": "50.27"
+    },
+    {
+      "champion": "nami",
+      "role": "support",
+      "winrate": "50.26"
+    },
+    {
+      "champion": "seraphine",
+      "role": "support",
+      "winrate": "50.25"
+    },
+    {
+      "champion": "nautilus",
+      "role": "support",
+      "winrate": "50.24"
+    },
+    {
+      "champion": "jax",
+      "role": "top",
+      "winrate": "50.19"
+    },
+    {
+      "champion": "vel'koz",
+      "role": "support",
+      "winrate": "50.15"
+    },
+    {
+      "champion": "xerath",
+      "role": "support",
+      "winrate": "50.14"
+    },
+    {
+      "champion": "ahri",
+      "role": "mid",
+      "winrate": "50.13"
+    },
+    {
+      "champion": "udyr",
+      "role": "top",
+      "winrate": "50.13"
+    },
+    {
+      "champion": "milio",
+      "role": "support",
+      "winrate": "50.11"
+    },
+    {
+      "champion": "bard",
+      "role": "support",
+      "winrate": "50.08"
+    },
+    {
+      "champion": "teemo",
+      "role": "top",
+      "winrate": "49.94"
+    },
+    {
+      "champion": "camille",
+      "role": "support",
+      "winrate": "49.93"
+    },
+    {
+      "champion": "garen",
+      "role": "top",
+      "winrate": "49.93"
+    },
+    {
+      "champion": "renekton",
+      "role": "top",
+      "winrate": "49.91"
+    },
+    {
+      "champion": "vayne",
+      "role": "top",
+      "winrate": "49.84"
+    },
+    {
+      "champion": "fizz",
+      "role": "mid",
+      "winrate": "49.83"
+    },
+    {
+      "champion": "wukong",
+      "role": "jungle",
+      "winrate": "49.81"
+    },
+    {
+      "champion": "ryze",
+      "role": "top",
+      "winrate": "49.80"
+    },
+    {
+      "champion": "tristana",
+      "role": "mid",
+      "winrate": "49.78"
+    },
+    {
+      "champion": "viego",
+      "role": "jungle",
+      "winrate": "49.77"
+    },
+    {
+      "champion": "zyra",
+      "role": "support",
+      "winrate": "49.76"
+    },
+    {
+      "champion": "darius",
+      "role": "top",
+      "winrate": "49.75"
+    },
+    {
+      "champion": "diana",
+      "role": "jungle",
+      "winrate": "49.75"
+    },
+    {
+      "champion": "malzahar",
+      "role": "mid",
+      "winrate": "49.74"
+    },
+    {
+      "champion": "hecarim",
+      "role": "jungle",
+      "winrate": "49.72"
+    },
+    {
+      "champion": "lucian",
+      "role": "adc",
+      "winrate": "49.72"
+    },
+    {
+      "champion": "volibear",
+      "role": "top",
+      "winrate": "49.71"
+    },
+    {
+      "champion": "heimerdinger",
+      "role": "top",
+      "winrate": "49.70"
+    },
+    {
+      "champion": "cho'gath",
+      "role": "top",
+      "winrate": "49.63"
+    },
+    {
+      "champion": "pantheon",
+      "role": "top",
+      "winrate": "49.61"
+    },
+    {
+      "champion": "aatrox",
+      "role": "top",
+      "winrate": "49.59"
+    },
+    {
+      "champion": "brand",
+      "role": "jungle",
+      "winrate": "49.58"
+    },
+    {
+      "champion": "veigar",
+      "role": "mid",
+      "winrate": "49.58"
+    },
+    {
+      "champion": "corki",
+      "role": "adc",
+      "winrate": "49.56"
+    },
+    {
+      "champion": "illaoi",
+      "role": "top",
+      "winrate": "49.47"
+    },
+    {
+      "champion": "malphite",
+      "role": "mid",
+      "winrate": "49.43"
+    },
+    {
+      "champion": "trundle",
+      "role": "top",
+      "winrate": "49.33"
+    },
+    {
+      "champion": "akali",
+      "role": "top",
+      "winrate": "49.31"
+    },
+    {
+      "champion": "shaco",
+      "role": "support",
+      "winrate": "49.30"
+    },
+    {
+      "champion": "zed",
+      "role": "mid",
+      "winrate": "49.30"
+    },
+    {
+      "champion": "sivir",
+      "role": "adc",
+      "winrate": "49.25"
+    },
+    {
+      "champion": "renata glasc",
+      "role": "support",
+      "winrate": "49.22"
+    },
+    {
+      "champion": "lux",
+      "role": "support",
+      "winrate": "49.21"
+    },
+    {
+      "champion": "kha'zix",
+      "role": "jungle",
+      "winrate": "49.20"
+    },
+    {
+      "champion": "leblanc",
+      "role": "mid",
+      "winrate": "49.17"
+    },
+    {
+      "champion": "viego",
+      "role": "mid",
+      "winrate": "49.17"
+    },
+    {
+      "champion": "ziggs",
+      "role": "mid",
+      "winrate": "49.14"
+    },
+    {
+      "champion": "shyvana",
+      "role": "jungle",
+      "winrate": "49.14"
+    },
+    {
+      "champion": "ryze",
+      "role": "mid",
+      "winrate": "49.13"
+    },
+    {
+      "champion": "lulu",
+      "role": "support",
+      "winrate": "49.13"
+    },
+    {
+      "champion": "evelynn",
+      "role": "jungle",
+      "winrate": "49.11"
+    },
+    {
+      "champion": "vi",
+      "role": "jungle",
+      "winrate": "49.07"
+    },
+    {
+      "champion": "sejuani",
+      "role": "jungle",
+      "winrate": "49.02"
+    },
+    {
+      "champion": "katarina",
+      "role": "mid",
+      "winrate": "49.01"
+    },
+    {
+      "champion": "ornn",
+      "role": "top",
+      "winrate": "49.01"
+    },
+    {
+      "champion": "graves",
+      "role": "jungle",
+      "winrate": "49.00"
+    },
+    {
+      "champion": "kayn",
+      "role": "jungle",
+      "winrate": "48.96"
+    },
+    {
+      "champion": "gnar",
+      "role": "top",
+      "winrate": "48.95"
+    },
+    {
+      "champion": "kai'sa",
+      "role": "adc",
+      "winrate": "48.93"
+    },
+    {
+      "champion": "lissandra",
+      "role": "mid",
+      "winrate": "48.91"
+    },
+    {
+      "champion": "vladimir",
+      "role": "mid",
+      "winrate": "48.90"
+    },
+    {
+      "champion": "kassadin",
+      "role": "mid",
+      "winrate": "48.87"
+    },
+    {
+      "champion": "vayne",
+      "role": "adc",
+      "winrate": "48.74"
+    },
+    {
+      "champion": "rengar",
+      "role": "jungle",
+      "winrate": "48.72%       "
+    },
+    {
+      "champion": "briar",
+      "role": "jungle",
+      "winrate": "48.69"
+    },
+    {
+      "champion": "naafiri",
+      "role": "mid",
+      "winrate": "48.65"
+    },
+    {
+      "champion": "yasuo",
+      "role": "adc",
+      "winrate": "48.65"
+    },
+    {
+      "champion": "poppy",
+      "role": "jungle",
+      "winrate": "48.61"
+    },
+    {
+      "champion": "yasuo",
+      "role": "mid",
+      "winrate": "48.60"
+    },
+    {
+      "champion": "kalista",
+      "role": "adc",
+      "winrate": "48.58"
+    },
+    {
+      "champion": "vladimir",
+      "role": "top",
+      "winrate": "48.57"
+    },
+    {
+      "champion": "sion",
+      "role": "top",
+      "winrate": "48.53"
+    },
+    {
+      "champion": "senna",
+      "role": "support",
+      "winrate": "48.53"
+    },
+    {
+      "champion": "dr. mundo",
+      "role": "top",
+      "winrate": "48.49"
+    },
+    {
+      "champion": "morgana",
+      "role": "support",
+      "winrate": "48.49"
+    },
+    {
+      "champion": "draven",
+      "role": "adc",
+      "winrate": "48.46"
+    },
+    {
+      "champion": "orianna",
+      "role": "mid",
+      "winrate": "48.37"
+    },
+    {
+      "champion": "aurelion sol",
+      "role": "mid",
+      "winrate": "48.37"
+    },
+    {
+      "champion": "xayah",
+      "role": "adc",
+      "winrate": "48.36"
+    },
+    {
+      "champion": "jayce",
+      "role": "mid",
+      "winrate": "48.35"
+    },
+    {
+      "champion": "sylas",
+      "role": "support",
+      "winrate": "48.33"
+    },
+    {
+      "champion": "singed",
+      "role": "top",
+      "winrate": "48.18"
+    },
+    {
+      "champion": "ashe",
+      "role": "support",
+      "winrate": "48.15"
+    },
+    {
+      "champion": "jayce",
+      "role": "top",
+      "winrate": "48.12"
+    },
+    {
+      "champion": "varus",
+      "role": "adc",
+      "winrate": "47.95"
+    },
+    {
+      "champion": "nasus",
+      "role": "top",
+      "winrate": "47.94"
+    },
+    {
+      "champion": "varus",
+      "role": "top",
+      "winrate": "47.92"
+    },
+    {
+      "champion": "karma",
+      "role": "support",
+      "winrate": "47.87"
+    },
+    {
+      "champion": "sejuani",
+      "role": "top",
+      "winrate": "47.76"
+    },
+    {
+      "champion": "lee sin",
+      "role": "jungle",
+      "winrate": "47.70"
+    },
+    {
+      "champion": "master yi",
+      "role": "jungle",
+      "winrate": "47.57"
+    },
+    {
+      "champion": "hwei",
+      "role": "support",
+      "winrate": "47.43"
+    },
+    {
+      "champion": "pantheon",
+      "role": "support",
+      "winrate": "47.15"
+    },
+    {
+      "champion": "yone",
+      "role": "mid",
+      "winrate": "47.08"
+    },
+    {
+      "champion": "viego",
+      "role": "top",
+      "winrate": "47.02"
+    },
+    {
+      "champion": "ezreal",
+      "role": "adc",
+      "winrate": "46.91"
+    },
+    {
+      "champion": "zeri",
+      "role": "adc",
+      "winrate": "46.82"
+    },
+    {
+      "champion": "brand",
+      "role": "support",
+      "winrate": "46.80"
+    },
+    {
+      "champion": "yasuo",
+      "role": "top",
+      "winrate": "46.79"
+    },
+    {
+      "champion": "swain",
+      "role": "support",
+      "winrate": "46.69"
+    },
+    {
+      "champion": "gangplank",
+      "role": "top",
+      "winrate": "46.54"
+    },
+    {
+      "champion": "aphelios",
+      "role": "adc",
+      "winrate": "46.53"
+    },
+    {
+      "champion": "zed",
+      "role": "jungle",
+      "winrate": "46.48"
+    },
+    {
+      "champion": "corki",
+      "role": "mid",
+      "winrate": "46.31"
+    },
+    {
+      "champion": "yuumi",
+      "role": "support",
+      "winrate": "46.22"
+    },
+    {
+      "champion": "yone",
+      "role": "top",
+      "winrate": "46.02"
+    },
+    {
+      "champion": "sylas",
+      "role": "jungle",
+      "winrate": "45.87"
+    },
+    {
+      "champion": "azir",
+      "role": "mid",
+      "winrate": "45.65"
+    },
+    {
+      "champion": "k'sante",
+      "role": "top",
+      "winrate": "45.44"
+    },
+    {
+      "champion": "lucian",
+      "role": "mid",
+      "winrate": "45.24"
+    },
+    {
+      "champion": "smolder",
+      "role": "adc",
+      "winrate": "43.79"
+    }
+  ]
+}
