@@ -5,14 +5,14 @@ import (
 	"github.com/gocolly/colly/v2"
 )
 
-func main() {
+func RENAMETOMAIN() {
 
 	c := colly.NewCollector()
 
 	c.OnHTML("", func(h *colly.HTMLElement) {
 
 	})
-
+	//REMEMBER TO RENAME TO MAIN WHEN TESTING
 	c.OnHTML("strong.champion-name", func(h *colly.HTMLElement) {
 		fmt.Println(h.ChildAttr("h3 a", "title"))
 	})

@@ -1,85 +1,160 @@
-/* landing.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
 }
 
-.site-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.site-wrapper-inner {
-    text-align: center;
-}
-
-.container {
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+    color: #333;
+    text-shadow: none; /* Prevent inheritance from `body` */
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+    height: 100%;
+    background-color: #333; /* Dark background */
+    margin: 0;
+}
+body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    font-size: 1.5em; /* Increase base font size */
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* Ensure full height coverage */
+    background-color: #333;
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: middle; /* Center vertically */
+}
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+    padding: 30px;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em; /* Increase brand size */
+    display: inline-block;
 }
 
 .masthead-nav {
-    list-style: none;
-    padding: 0;
-}
-
-.masthead-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.masthead-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-.masthead-nav a:hover {
-    text-decoration: underline;
-}
-
-.cover-heading {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 1em;
-    width: calc(100% - 22px);
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-
-}
-
-.lead {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.btn {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.masthead-nav > li {
+    display: inline-block;
+}
+.masthead-nav > li + li {
+    margin-left: 30px; /* Increase spacing between nav items */
+}
+.masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1.5em; /* Increase nav item font size */
+    font-weight: bold;
+    color: #fff; /* IE8 proofing */
+    color: rgba(255,255,255,.75);
+    border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
     color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
+    border-bottom-color: #fff;
 }
 
-.btn:hover {
-    background-color: #0056b3;
+@media (min-width: 768px) {
+    .masthead-brand {
+        float: none;
+    }
+    .masthead-nav {
+        float: none;
+    }
 }
 
-input.search-query {
+/*
+ * Cover
+ */
 
-    color: #121212;
+.cover {
+    padding: 0 20px;
+}
+.cover .btn-lg {
+    padding: 15px 30px; /* Increase button padding */
+    font-size: 1.5em; /* Increase button font size */
+    font-weight: bold;
+}
+
+/*
+ * Input field styling
+ */
+input[type="text"] {
+    padding: 15px; /* Increase padding */
+    font-size: 1.5em; /* Increase font size */
+    color: #fff;
+    background-color: #555; /* Dark background for input */
+    border: 1px solid #777; /* Darker border */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px; /* Increase max width */
+    margin: 20px 0; /* Increase margin */
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    font-size: 1.2em; /* Increase placeholder font size */
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
 }

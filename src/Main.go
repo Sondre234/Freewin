@@ -13,6 +13,30 @@ import (
 	"strings"
 )
 
+func main() {
+
+	config, err := readConfig("resources/config.json")
+	if err != nil {
+		log.Fatalf("Error reading config file: %v", err)
+	}
+
+	// Serve static files from the "static" directory
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	http.HandleFunc("/search", searchHandler(config))
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl := template.Must(template.ParseFiles("htmx/index.html"))
+		if err := tmpl.Execute(w, nil); err != nil {
+			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
+		}
+	})
+
+	log.Println("Starting server on :8000")
+	log.Fatal(http.ListenAndServe("127.0.0.1:8000", nil))
+}
+
 type Stats struct {
 	Stats []Champion `json:"stats"`
 }
@@ -166,28 +190,4 @@ func updateWinrateDataFromTextFileToJsonFormat() {
 	}
 
 	fmt.Println("JSON data successfully written to resources/bestChamps.json")
-}
-
-func sss() {
-
-	config, err := readConfig("resources/config.json")
-	if err != nil {
-		log.Fatalf("Error reading config file: %v", err)
-	}
-
-	// Serve static files from the "static" directory
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
-
-	http.HandleFunc("/search", searchHandler(config))
-
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("htmx/index.html"))
-		if err := tmpl.Execute(w, nil); err != nil {
-			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
-		}
-	})
-
-	log.Println("Starting server on :8000")
-	log.Fatal(http.ListenAndServe("127.0.0.1:8000", nil))
 }

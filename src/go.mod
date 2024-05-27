@@ -4,6 +4,7 @@ go 1.22.3
 
 require (
 	github.com/gocolly/colly/v2 v2.1.0
+	github.com/gorilla/mux v1.8.1
 	go.mongodb.org/mongo-driver v1.15.0
 )
 
