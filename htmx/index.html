@@ -26,7 +26,18 @@
                 <h1 class="cover-heading">Search for Easy wins</h1>
                 <form hx-post="/search" hx-trigger="submit" hx-target="#result" hx-swap="innerHTML">
                     <input type="text" name="summonerInfo" placeholder="Summoner name" required>
+
+                    <div>
+                        <select name="make" hx-get="/models" hx-target="#models">
+                            <option value="Top">Top</option>
+                            <option value="Jungle">Jungle</option>
+                            <option value="Mid">Mid</option>
+                            <option value="Bot">Bot</option>
+                            <option value="Support">Support</option>
+                        </select>
+                    </div>
                 </form>
+
                 <p class="lead">Get recommended champions based on your personal stats.</p>
                 <div id="result"></div>
             </div>

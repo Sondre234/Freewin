@@ -126,11 +126,23 @@ body {
 /*
  * Input field styling
  */
+
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover,
+input[type="text"]:-webkit-autofill:focus,
+input[type="text"]:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #555 inset !important; /* Match the background color */
+    -webkit-text-fill-color: #fff !important; /* Ensure text color remains white */
+    border: 1px solid #777 !important; /* Ensure border color remains dark */
+    color: #fff !important; /* Ensure text color remains white */
+    background-color: #555 !important; /* Match the background color */
+}
+
 input[type="text"] {
     padding: 15px; /* Increase padding */
     font-size: 1.5em; /* Increase font size */
     color: #fff;
-    background-color: #555; /* Dark background for input */
+    background-color: #555 !important; /* Dark background for input */
     border: 1px solid #777; /* Darker border */
     border-radius: 5px;
     width: 100%;
@@ -141,6 +153,34 @@ input[type="text"] {
 input[type="text"]::placeholder {
     color: #aaa;
     font-size: 1.2em; /* Increase placeholder font size */
+}
+
+/*
+ * Dropdown styling
+ */
+
+select {
+    padding: 15px; /* Increase padding */
+    font-size: 1.5em; /* Increase font size */
+    color: #fff;
+    background-color: #555; /* Dark background for select */
+    border: 1px solid #777; /* Darker border */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px; /* Increase max width */
+    margin: 20px 0; /* Increase margin */
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow in Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    position: relative;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 5.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h.5zm13 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h.5zm-6.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h.5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+}
+
+select option {
+    color: #000; /* Black text color for options */
 }
 
 /*

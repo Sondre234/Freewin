@@ -14,29 +14,10 @@ import (
 	"strings"
 )
 
-func main1() {
+func giveChamp(summonerInfo string) {
 
-	config, err := readConfig("resources/config.json")
-	if err != nil {
-		log.Fatalf("Error reading config file: %v", err)
-	}
-
-	// Serve static files from the "static" directory
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
-
-	http.HandleFunc("/search", searchHandler(config))
-
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("htmx/index.html"))
-		if err := tmpl.Execute(w, nil); err != nil {
-			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
-		}
-	})
-
-	log.Println("Starting server on :8000")
-	log.Fatal(http.ListenAndServe("127.0.0.1:8000", nil))
-
+	getName := summonerInfo
+	fmt.Println(getName)
 }
 
 type Stats struct {
@@ -66,6 +47,54 @@ type Summoner struct {
 	TagLine  string `json:"tagLine"`
 }
 
+func getAPIKEY() string {
+
+	jsonFile, err := os.Open("C:\\Users\\sondr\\Stuff1\\resources\\config.json")
+	if err != nil {
+		log.Fatal("Error: ", err)
+	}
+	defer jsonFile.Close()
+
+	byteValue, err := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		log.Fatalf("Failed to read JSON file: %v", err)
+	}
+
+	// Unmarshal the JSON data into a Config struct
+	var config Config
+	if err := json.Unmarshal(byteValue, &config); err != nil {
+		log.Fatalf("Failed to parse JSON file: %v", err)
+	}
+
+	apikey := config.APIKey
+	return apikey
+}
+
+func main() {
+
+	config, err := readConfig("resources/config.json")
+	if err != nil {
+		log.Fatalf("Error reading config file: %v", err)
+	}
+
+	// Serve static files from the "static" directory
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	http.HandleFunc("/search", searchHandler(config))
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl := template.Must(template.ParseFiles("htmx/index.html"))
+		if err := tmpl.Execute(w, nil); err != nil {
+			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
+		}
+	})
+
+	log.Println("Starting server on http://localhost:8000/")
+	log.Fatal(http.ListenAndServe("127.0.0.1:8000", nil))
+
+}
+
 func getChampionNameByID(id int) (string, error) {
 	file, err := os.Open("resources/champids.txt")
 	if err != nil {
@@ -91,48 +120,6 @@ func getChampionNameByID(id int) (string, error) {
 		return "", err
 	}
 	return "Champion not found", nil
-}
-
-func main() {
-	// Get PUUID and champion info
-	name, err := getChampionNameByID(266)
-	if err != nil {
-		fmt.Println("Error:", err)
-	} else {
-		fmt.Println("Champion Name:", name)
-	}
-
-	res, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/" +
-		"champion-masteries/by-puuid/vosf4Gq_pWSOBD-7jqnqupV1ZCNvbS66k10cDcIVJjjkiI6rjl03_-OK5acnbULt3ng3xRDGvZeYNA?api_key=RGAPI-277d267d-c27e-4411-a87a-df4502edc571")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer res.Body.Close()
-
-	body, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	var champs []Champs
-	json.Unmarshal(body, &champs)
-
-	if res.StatusCode != http.StatusOK {
-		log.Fatalf("unexpected status code: %d", res.StatusCode)
-	}
-
-	for i, p := range champs {
-		championName, err := getChampionNameByID(p.ChampionId)
-		if err != nil {
-			fmt.Println("Error:", err)
-			continue
-		}
-
-		fmt.Println("Champion", (i + 1), ":", championName)
-		fmt.Println("ChampionLevel: ", p.ChampionLevel)
-		fmt.Println("ChampionPoints: ", p.ChampionPoints)
-		fmt.Println("ChestGranted: ", p.ChestGranted)
-	}
 }
 
 func readConfig(filePath string) (*Config, error) {
@@ -196,76 +183,90 @@ func searchHandler(config *Config) http.HandlerFunc {
 			return
 		}
 
-		tmpl := template.Must(template.New("summoner-info").Parse(`
-            <p class="card-text"><strong>Puuid:</strong> {{.Puuid}}</p>
-            <p class="card-text"><strong>Game Name:</strong> {{.GameName}}</p>
-            <p class="card-text"><strong>Tag Line:</strong> {{.TagLine}}</p>
+		// Store PUUID in a variable
+		puuid := summoner.Puuid
+
+		// Fetch champion mastery data
+		masteryURL := fmt.Sprintf("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/%s?api_key=%s", puuid, config.APIKey)
+		masteryResp, err := http.Get(masteryURL)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Error fetching champion mastery data: %v", err), http.StatusInternalServerError)
+			return
+		}
+		defer masteryResp.Body.Close()
+
+		if masteryResp.StatusCode != http.StatusOK {
+			bodyBytes, _ := ioutil.ReadAll(masteryResp.Body)
+			bodyString := string(bodyBytes)
+			http.Error(w, bodyString, masteryResp.StatusCode)
+			return
+		}
+
+		var champs []Champs
+		if err := json.NewDecoder(masteryResp.Body).Decode(&champs); err != nil {
+			http.Error(w, fmt.Sprintf("Error decoding champion mastery response: %v", err), http.StatusInternalServerError)
+			return
+		}
+
+		// Fetch champion names
+		champNames := make(map[int]string)
+		file, err := os.Open("resources/champids.txt")
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Error opening champids.txt: %v", err), http.StatusInternalServerError)
+			return
+		}
+		defer file.Close()
+
+		scanner := bufio.NewScanner(file)
+		for scanner.Scan() {
+			line := scanner.Text()
+			parts := strings.Split(line, "\t")
+			if len(parts) == 2 {
+				champID, err := strconv.Atoi(parts[0])
+				if err != nil {
+					continue
+				}
+				champNames[champID] = parts[1]
+			}
+		}
+		if err := scanner.Err(); err != nil {
+			http.Error(w, fmt.Sprintf("Error reading champids.txt: %v", err), http.StatusInternalServerError)
+			return
+		}
+
+		// Prepare data with champion names
+		type ChampInfo struct {
+			Name           string
+			ChampionLevel  int
+			ChampionPoints int
+			ChestGranted   bool
+		}
+
+		var champInfos []ChampInfo
+		for _, champ := range champs {
+			name := champNames[champ.ChampionId]
+			champInfos = append(champInfos, ChampInfo{
+				Name:           name,
+				ChampionLevel:  champ.ChampionLevel,
+				ChampionPoints: champ.ChampionPoints,
+				ChestGranted:   champ.ChestGranted,
+			})
+		}
+
+		// Create a response template with champion mastery information
+		tmpl := template.Must(template.New("champion-mastery-info").Parse(`
+            <h2>Champion Mastery Information</h2>
+            {{range .}}
+                <div class="champion">
+                    <p><strong>Champion:</strong> {{.Name}}</p>
+                    <p><strong>Level:</strong> {{.ChampionLevel}}</p>
+                    <p><strong>Points:</strong> {{.ChampionPoints}}</p>
+                    <p><strong>Chest Granted:</strong> {{.ChestGranted}}</p>
+                </div>
+            {{end}}
         `))
-		if err := tmpl.Execute(w, summoner); err != nil {
+		if err := tmpl.Execute(w, champInfos); err != nil {
 			http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
 		}
 	}
-}
-
-func updateWinrateDataFromTextFileToJsonFormat() {
-
-	winratestxtpath := "C:\\Users\\sondr\\Stuff1\\resources\\winrates.txt"
-	bestChampsjsonPath := "C:\\Users\\sondr\\Stuff1\\resources\\bestChamps.json"
-
-	file, err := os.Open(winratestxtpath)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
-
-	var champions []Champion
-	scanner := bufio.NewScanner(file)
-
-	for scanner.Scan() {
-		line := scanner.Text()
-		parts := strings.Split(line, ": ")
-		if len(parts) != 2 {
-			fmt.Println("Invalid line format:", line)
-			continue
-		}
-
-		roleChamp := parts[0]
-		winrate := strings.TrimSuffix(parts[1], "%")
-
-		roleChampParts := strings.SplitN(roleChamp, " ", 2)
-		if len(roleChampParts) != 2 {
-			fmt.Println("Invalid role and champion format:", roleChamp)
-			continue
-		}
-
-		role := strings.ToLower(roleChampParts[0])
-		champion := strings.ToLower(roleChampParts[1])
-
-		champions = append(champions, Champion{
-			Champion: champion,
-			Role:     role,
-			Winrate:  winrate,
-		})
-	}
-
-	if err := scanner.Err(); err != nil {
-		fmt.Println("Error reading file:", err)
-		return
-	}
-
-	stats := Stats{Stats: champions}
-	jsonData, err := json.MarshalIndent(stats, "", "  ")
-	if err != nil {
-		fmt.Println("Error marshaling JSON:", err)
-		return
-	}
-
-	err = os.WriteFile(bestChampsjsonPath, jsonData, 0644)
-	if err != nil {
-		fmt.Println("Error writing JSON to file:", err)
-		return
-	}
-
-	fmt.Println("JSON data successfully written to resources/bestChamps.json")
 }

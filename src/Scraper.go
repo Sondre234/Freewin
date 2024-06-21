@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/gocolly/colly/v2"
+	"log"
+	"os"
 )
 
 func RENAMETOMAIN() {
@@ -24,8 +26,7 @@ func RENAMETOMAIN() {
 	c.Visit("https://u.gg/lol/tier-list")
 }
 
-/*
-func main() {
+func main3() {
 
 	destinationFile := "winratesScraped.txt"
 	// Create a new collector
@@ -79,4 +80,3 @@ func main() {
 
 	fmt.Println("Scraping complete, check winratesScraped.txt for the results.")
 }
-*/
